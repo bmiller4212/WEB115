@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript and HTML Forms</title>
+    </head>
+    <body>
+        <form id="myForm" name = "myForm">
+            <input type="text" id="name" name="name" value="Enter your name">
+            <input type="hidden" id="hiddenField" name="hiddenField" value="hiddenValue">
+            <br>
+            <select id="mySelect">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select><br>
+            <input type="radio" id="option1" name="myRadio" value="option1">
+            <label for="option1">Option 1</label><br>
+            <input type="radio" id="option2" name="myRadio" value="option2">
+            <label for="option2">Option 2</label><br>
+            <input type="radio" id="option3" name="myRadio" value="option3">
+            <label for="option3">Option 3</label><br>
+            <input type="email" id="email" value="email">
+            <input type="submit" value="submit">
+        </form>
+        <script>
+            let nameInput = document.getElementById("name");
+            console.log(nameInput.value);
+            let selectList = document.getElementById("mySelect");
+            selectList.addEventListener("change", function() {
+                console.log(selectList.value);
+            });
+
+            let newOption = document.createElement('option');
+            newOption.text = "New Option";
+            newOption.value = "New Option";
+            selectList.add(newOption);
+
+            let radioButtons = document.getElementsByName("myRadio");
+            let selectedValue;
+            for (let i = 0;i < radioButtons.length; i++) {
+                radioButtons[i].addEventListener("change", function() {
+                    if (this.checked) {
+                        selectedValue = this.value;
+                        console.log(selectedValue);
+                    }
+                })
+            }
+
+            let hiddenField = document.getElementById("hiddenField");
+            console.log(hiddenField.value);
+
+            let emailInput = document.getElementById("email");
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            emailInput.addEventListener('blur', function() {
+                if (!emailRegex.test(emailInput.value)){
+                    console.log("Invalid Email Input");
+                }
+            })
+        </script>
+    </body>
+</html>
