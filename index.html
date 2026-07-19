@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Manager</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="main-cont">
+            <h1 id="main-heading">Task Manager</h1>
+            <div class="user-input" id="user-input-cont">
+                <form id="input-form">
+                    <label for="task-name-input" id="task-name-label" class="user-input">Task Name</label>
+                        <input type="text" id="task-name-input" name="t-name">
+                    <label for="task-priority-input" id="task-priority-label" class="user-input">Priority</label>
+                        <select id="task-priority-input" name="t-priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    <label for="task-important-toggle" id="task-important-label" class="user-input">Important: </label>
+                        <input type="checkbox" id="task-important-toggle" class="user-input" name="t_important">
+                    <button type="button" id="add-task-btn" class="user-input">Add Task</button>
+                </form>
+            </div>
+            <hr>
+            <div id="task-list-cont" class="task-list">
+                <h3 id="task-list-heading" class="task-list">Active Tasks</h3>
+                <button type="button" class="filter-btns" id="importance-filter-btn">Sort by Importance ⮁</button>                
+                <div class="task-labels">
+                    <button type="button" class="filter-btns" id="name-filter-btn"><h5>Task Name ⮁</h5></button>
+                    <button type="button" class="filter-btns" id="priority-filter-btn"><h5>Priority ⮁</h5></button>
+                    <button type="button" class="filter-btns" id="date-filter-btn"><h5>Date ⮁</h5></button>
+                    <button type="button" class="filter-btns" id="options-filter-btn"><h5>Complete/Delete ⮁</h5></button>
+                </div>
+                <hr class="task-dvdr">
+                <div id="taskmanager" class="task-list">
+                    <!--Dynamic Task List-->
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

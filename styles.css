@@ -1,0 +1,88 @@
+body {
+    font-family: "Scapholene";
+    background-color: palegoldenrod;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+#user-input-cont {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.task-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    animation: slideDown 0.5s ease;
+    font-weight: normal;
+    font-size: 1.4em;
+}
+
+.task-labels {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.task-dvdr {
+    width: 90vw;
+    color: paleturquoise;
+}
+
+button, form, input, select, textarea {
+    font-family: 'Scapholene';
+    font-weight: normal;
+    font-size: 1.25em;
+    background: none;
+}
+
+input[type="checkbox"] {
+    accent-color: palegoldenrod;
+    background-color: palegoldenrod;
+}
+
+#task-name-input {
+    width: 20vw;
+}
+
+.filter-btns {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+#importance-filter-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+}
+
+/* custom animations for tasks */
+@keyframes slideDown { 
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+
+/* Custom Fonts */
+@font-face {
+    font-family: "Scapholene";
+    src: url('fonts/Scapholene.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
